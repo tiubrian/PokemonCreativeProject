@@ -2,10 +2,16 @@
 <title>Pokemon</title>
 <body>
   Pokemon Number: <input type="pokemonNumber" name="" value=""><br>
-  <button type="button">Show stats!</button>
+  <button type="button" id="showStats">Show stats!</button>
+  <div id="stats"></div>
 </body>
 
 <script src="jquery-3.1.1.min.js"></script>
 <script>
+$(document).ready(function(){
+  $('#showStats').click(function() {
+    alert( "Handler for .click() called." );
+  });
+});
 </script>
 </html>

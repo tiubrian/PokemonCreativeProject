@@ -2,7 +2,7 @@
 <title>Pokemon</title>
 <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 <body>
-  Pokemon Number: <input type="pokemonNumber" name="" value=""><br>
+  Pokemon Number: <input id="pokemonNumber" name="" value=""><br>
   <button type="button" id="showStats">Show stats!</button>
   <div id="stats"></div>
 </body>
@@ -13,9 +13,15 @@ $(document).ready(function(){
 
 $('#showStats').click(function(e) {
   //alert( "Handler for .click() called." );
-  var url = "https://pokeapi.co/api/v2/pokemon/3/";
-  jQuery.getJSON( url , function(data){
+  var pokemonNumber = $('#pokemonNumber').val();
+  console.log(pokemonNumber);
+  var url = "https://pokeapi.co/api/v2/pokemon/"+pokemonNumber+"/";
+  console.log(url);
+
+  $.getJSON( url , function( data ) {
     $("#stats").html("it's working");
+    console.log(url);
+    console.log(json);
   });
 });
 </script>

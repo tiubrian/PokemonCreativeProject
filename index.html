@@ -1,13 +1,24 @@
 <html>
-<title>Pokemon</title>
-<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+<head>
+  <title>Pokemon</title>
+  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+  <link rel="stylesheet" type="text/css" href="main.css">
+</head>
 <body>
-  Pokemon Number: <input id="pokemonNumber" name="" value=""><br>
-  <button type="button" id="showStats">Show stats!</button>
-  <div id="stats"></div>
+  <div>
+    Pokemon Number:&nbsp;&nbsp;&nbsp;<input id="pokemonNumber" name="" value=""><br>
+    <br>
+    <button type="button" id="showStats">Show stats!</button>
+    <br><br><br>
+    <div id="stats"></div>
+  </div>
 </body>
 
 <script>
+function toTitleCase(str) {
+  return str.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
+}
+
 $(document).ready(function(){
 });
 
@@ -19,9 +30,11 @@ $('#showStats').click(function(e) {
   console.log(url);
 
   $.getJSON( url , function( data ) {
-    $("#stats").html("it's working");
+    var htmlString = toTitleCase(data['name']);
+    $("#stats").html(htmlString);
     console.log(url);
-    console.log(json);
+    console.log(data);
+    console.log("Name: " + data['name']);
   });
 });
 </script>

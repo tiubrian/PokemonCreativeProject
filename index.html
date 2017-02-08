@@ -31,8 +31,10 @@ $('#showStats').click(function(e) {
 
   $.getJSON( url , function( data ) {
     var htmlString = toTitleCase(data['name'])+'<br>';
+    htmlString += "<img src=\""+data['sprites']['front_default']+"\"><br>"
     htmlString += "Height: " + data['height'] + '<br>';
     htmlString += "Weight: " + data['weight'] + '<br>';
+
     $("#stats").html(htmlString);
     console.log(url);
     console.log(data);

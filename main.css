@@ -1,0 +1,31 @@
+body {
+    font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+    letter-spacing: -.02em;
+    word-spacing: -.04em;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-justify-content: center;
+    justify-content: center;
+    background-color: #fcfcfc;
+    color: #293239;
+}
+body > div {
+    margin: .5rem 0 1rem 0;
+    padding: 24px;
+    background-color: #fff;
+    border-radius: 2px;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+}
+h2 {
+    margin-top: 25px;
+    margin-bottom: 25px;
+    font-family: serif;
+}
+form {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+input {
+    font-size: 18px;
+    padding: 4px 8px;
+}

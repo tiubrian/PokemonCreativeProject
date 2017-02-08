@@ -30,7 +30,9 @@ $('#showStats').click(function(e) {
   console.log(url);
 
   $.getJSON( url , function( data ) {
-    var htmlString = toTitleCase(data['name']);
+    var htmlString = toTitleCase(data['name'])+'<br>';
+    htmlString += "Height: " + data['height'] + '<br>';
+    htmlString += "Weight: " + data['weight'] + '<br>';
     $("#stats").html(htmlString);
     console.log(url);
     console.log(data);

@@ -80,9 +80,13 @@ var showStats = function(e) {
     htmlString += "<br>";
     htmlString += "Height: " + data['height'] + '<br>';
     htmlString += "Weight: " + data['weight'] + '<br>';
+    var baseTotal = 0;
     len = data['stats'].length;
-    for (idx = 0; idx < len; idx++)
+    for (idx = 0; idx < len; idx++) {
+      baseTotal += data['stats'][idx]['base_stat'];
       htmlString += toTitleCase(data['stats'][idx]['stat']['name']) + " base: " + data['stats'][idx]['base_stat'] + "<br>";
+    }
+    htmlString += "Base total: " + baseTotal + "<br>";
     htmlString += "<br>";
 
     $("#stats").html(htmlString);

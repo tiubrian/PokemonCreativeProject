@@ -29,3 +29,11 @@ input {
     font-size: 18px;
     padding: 4px 8px;
 }
+
+#pokelogo {
+  max-width:500px;
+}
+
+body {
+  background-image: url('wallpaper.png');
+}

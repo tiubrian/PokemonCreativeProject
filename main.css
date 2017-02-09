@@ -37,9 +37,12 @@ input {
     font-size: 18px;
     padding: 4px 8px;
     border-radius: 5px;
-    border: 2px #ddd solid;
+    border: 1px #aaa solid;
     box-shadow: none;
     outline: none;
+}
+input:focus {
+    border: 1px #72bcd4 solid;
 }
 *:focus {
     outline: none;

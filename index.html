@@ -99,7 +99,7 @@ var showJson = function(e) {
   console.log(globalJson);
 
   var jsonObj = globalJson;
-  var jsonPretty = JSON.stringify(jsonObj, null, 2);  
+  var jsonPretty = JSON.stringify(jsonObj, null, "..");  
   jsonPretty = syntaxHighlight(jsonPretty);
 
   var outputText = document.createElement("pre");

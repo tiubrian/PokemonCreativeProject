@@ -15,6 +15,12 @@ body > div {
     background-color: #fff;
     border-radius: 2px;
     box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 40vw;
+    min-width: 250px;
 }
 h2 {
     margin-top: 25px;
@@ -37,3 +43,26 @@ input {
 body {
   background-image: url('wallpaper.png');
 }
+
+.button {
+    background-color: #E6E6E6;
+    border: transparent;
+    color: rgba(0,0,0,.8);
+    padding: .5em 1em;
+    font-size: 100%;
+    text-decoration: none;
+    border-radius: 2px;
+    cursor: pointer;
+}
+.button:focus, .button:hover {
+    background-image: -webkit-linear-gradient(transparent,rgba(0,0,0,.05) 40%,rgba(0,0,0,.1));
+    background-image: linear-gradient(transparent,rgba(0,0,0,.05) 40%,rgba(0,0,0,.1));
+}
+.button:active {
+    border-color: #000;
+    box-shadow: 0 0 0 1px rgba(0,0,0,.15) inset, 0 0 6px rgba(0,0,0,.2) inset;
+}
+button.button {
+    outline: none;
+}
+

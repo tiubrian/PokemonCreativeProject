@@ -24,16 +24,23 @@ function toTitleCase(str) {
 $(document).ready(function(){
 });
 
-$('#showStats').click(function(e) {
-  //alert( "Handler for .click() called." );
+var showStats = function(e) {
   var pokemonNumber = $('#pokemonNumber').val();
   console.log(pokemonNumber);
   var url = "https://pokeapi.co/api/v2/pokemon/"+pokemonNumber+"/";
   console.log(url);
 
+  $("#stats").html("searching ...");
+
   $.getJSON( url , function( data ) {
     var htmlString = toTitleCase(data['name'])+'<br>';
     htmlString += "<img src=\""+data['sprites']['front_default']+"\"><br>"
+    htmlString += "Types: ";
+    var idx, len;
+    len = data['types'].length;
+    for (idx = 0; idx < len; idx++)
+      htmlString += data['types'][idx]['type']['name'] + "&nbsp;";
+    htmlString += "<br>";
     htmlString += "Height: " + data['height'] + '<br>';
     htmlString += "Weight: " + data['weight'] + '<br>';
 
@@ -41,7 +48,24 @@ $('#showStats').click(function(e) {
     console.log(url);
     console.log(data);
     console.log("Name: " + data['name']);
+
+    $.getJSON("https://pokeapi.co/api/v2/pokemon/"+pokemonNumber+"/encounters", function(data2) {
+        console.log(data2);
+    });
   });
+};
+
+
+$(document).keypress(function(e) {
+  if (e.which == 13) {
+    console.log('Enter pressed');
+    showStats(e);
+  }
+});
+
+$('#showStats').click(function(e) {
+  console.log("#showStats button clicked");
+  showStats(e);
 });
 </script>
 </html>

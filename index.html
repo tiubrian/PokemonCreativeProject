@@ -1,6 +1,6 @@
 <html>
 <head>
-  <title>Pokemon</title>
+  <title>Pokemon API: Syntax Highlight and jQuery UI</title>
   <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
   <link rel="stylesheet" type="text/css" href="main.css">
@@ -17,7 +17,7 @@
     <br><br><br>
     <div id="stats"></div>
     <br><br>
-    <button class='button' id='showJson'>Show JSON</button>
+    <button class='button' id='showJson'>Show JSON!</button>
   </div>
   <div id="dialog">
   </div>
@@ -80,6 +80,9 @@ var showStats = function(e) {
     htmlString += "<br>";
     htmlString += "Height: " + data['height'] + '<br>';
     htmlString += "Weight: " + data['weight'] + '<br>';
+    len = data['stats'].length;
+    for (idx = 0; idx < len; idx++)
+      htmlString += toTitleCase(data['stats'][idx]['stat']['name']) + " base: " + data['stats'][idx]['base_stat'] + "<br>";
     htmlString += "<br>";
 
     $("#stats").html(htmlString);

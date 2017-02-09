@@ -4,12 +4,16 @@ body {
     word-spacing: -.04em;
     display: -webkit-flex;
     display: flex;
+    -webkit-flex-direction: column;
+    flex-direction: column;
     -webkit-justify-content: center;
     justify-content: center;
+    -webkit-align-items: center;
+    align-items: center;
     background-color: #fcfcfc;
     color: #293239;
 }
-body > div {
+#mainDiv {
     margin: .5rem 0 1rem 0;
     padding: 24px;
     background-color: #fff;
@@ -76,5 +80,11 @@ body {
 }
 button.button {
     outline: none;
+}
+
+#dialog {
+    width: 500px;
+    height: 300px;
+    /*overflow: scroll;*/
 }
 
